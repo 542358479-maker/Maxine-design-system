@@ -57,7 +57,7 @@ repo: https://github.com/esthersjw/esther-design-system
 - P1 应过 — 尽量满足
 - P2 加分 — 锦上添花
 
-（图文卡片模式：额外对照 `scene-cards.md` 底部的 Checklist。）
+（图文卡片模式：额外对照 `scene-cards.md` 底部的 Checklist；公众号模式：额外对照 `scene-wechat.md` 底部的 Checklist，逐项检查标题是否发生非语义断行或英文断词。）
 
 ### Step 7: 交付
 输出最终 HTML 文件，确保可直接在浏览器打开。
