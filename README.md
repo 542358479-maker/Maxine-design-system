@@ -2,6 +2,14 @@
 
 一套给 AI 看的个人品牌设计系统。
 
+**ESTHER不二** · [小红书](https://www.xiaohongshu.com/user/profile/55c6c7695894460904f87b47?m_source=pinpai) · [Twitter / X](https://x.com/SjwEsther)
+
+> **开源的是方法论，不是我的身份。**
+>
+> 本仓库开源的是我整理出的设计方法论、设计规范、工作流程、布局模式、组件模式和相关模板。你可以基于 CC BY-NC-SA 4.0 学习、修改和分享这些内容，但这不代表你获得了使用 **ESTHER不二 / Esther / 不二 / esthersjw** 的姓名、头像、IP形象、Logo、品牌标识、个人账号标识或本人形象进行创作、运营、发布、商业合作或对外背书的许可。
+>
+> 使用这套系统时，请替换为你自己的姓名、头像、IP和品牌信息。任何使用本仓库内容制作的账号、作品、产品、课程、Agent 或服务，都不得让人误以为由我制作、授权、合作或背书。协议要求的署名仅表示内容来源，不等于身份授权。
+
 把审美写成操作手册，AI 每次帮你做页面时必须翻这本手册，不能自由发挥。**限制 AI 的自由度 = 保证输出质量。**
 
 > ⚠️ **使用前请先完成 `brand-dna.md` 的配置：** 默认品牌色可直接使用，如需替换成你自己的请同步修改模板变量；并放入你自己的头像。
@@ -207,9 +215,17 @@ AI 每次做设计必须按这个顺序走：
 
 [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-本仓库采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
+本仓库中的方法论、设计规范、工作流程、布局模式、组件模式、模板和文档，采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
 
-- ✅ 可自由使用、修改、分享
-- ✅ 必须署名：ESTHER不二 (esthersjw)
-- ❌ 禁止商用
+- ✅ 可以学习、使用、修改和分享本仓库中的方法论与设计内容
+- ✅ 必须注明来源：ESTHER不二 / [esther-design-system](https://github.com/esthersjw/esther-design-system)
+- ❌ 禁止将本仓库内容用于商业用途
 - 🔄 修改后必须以相同协议分享
+- ❌ 署名不等于姓名、头像、IP、Logo、品牌标识或本人形象的使用授权
+- ❌ 不得使用我的名字、头像、IP或其他身份标识创建看起来由我运营、授权、合作或背书的账号、作品、产品、课程、Agent或服务
+
+### Name, Image and IP Notice
+
+**ESTHER不二、Esther、不二、esthersjw** 及与我相关的姓名、头像、IP形象、Logo、品牌标识、个人账号标识和本人形象，不属于本仓库 CC BY-NC-SA 4.0 的授权范围。
+
+你可以在协议要求的范围内进行事实性来源署名，但不得把这些名称或视觉资产用作自己的账号名、用户名、头像、品牌名、角色名、产品名或对外宣传素材，也不得暗示与我存在官方关系。
