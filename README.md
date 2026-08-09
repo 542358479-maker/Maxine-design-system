@@ -4,6 +4,8 @@
 
 **ESTHER不二** · [小红书](https://www.xiaohongshu.com/user/profile/55c6c7695894460904f87b47?m_source=pinpai) · [Twitter / X](https://x.com/SjwEsther)
 
+![Esther Design System overview](assets/design-system-overview-final.png)
+
 > **开源的是方法论，不是我的身份。**
 >
 > 本仓库开源的是我整理出的设计方法论、设计规范、工作流程、布局模式、组件模式和相关模板。你可以基于 CC BY-NC-SA 4.0 学习、修改和分享这些内容，但这不代表你获得了使用 **ESTHER不二 / Esther / 不二 / esthersjw** 的姓名、头像、IP形象、Logo、品牌标识、个人账号标识或本人形象进行创作、运营、发布、商业合作或对外背书的许可。
