@@ -50,7 +50,7 @@
 
 功能优先、交互感、信息密度高的应用型页面。
 
-🔗 [在线预览](https://esthersjw.github.io/esther-design-system/demo-app.html)
+🔗 [在线预览][(https://esthersjw.github.io/esther-design-system/demo-app.html)](https://542358479-maker.github.io/Maxine-design-system/assets/template-app.html)
 
 ---
 
