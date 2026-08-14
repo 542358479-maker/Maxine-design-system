@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><!-- App标题 --></title>
+  <title>Maxine Design System · App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* === CSS变量（简化版） === */
-    :root { --_esther-ds: "esthersjw-v1";
-      --blue: #2B7FD8;
-      --yellow: #F4D758;
-      --red: #E84A5F;
+    /* === CSS变量（Maxine版） === */
+    :root {
+      --_maxine-ds: "maxine-v1";
+      --yellow: #E8B923;   /* 主色调：标题、超链接、重点标记 */
+      --black: #2A2A2A;    /* 强调：装饰、badges、连接线、高亮 */
+      --pink: #F2B8A0;     /* 点缀：高亮下划线、CTA、标签 */
       --cream: #fefcf6;
       --ink: #1A1A2E;
       --ink-light: #4A4A5A;
@@ -20,9 +21,7 @@
       --card-bg: #fff;
       --border: rgba(26,26,26,.08);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Noto Sans SC', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
       font-size: 15px;
@@ -30,11 +29,12 @@
       color: var(--ink);
       background: var(--cream);
     }
-
     ::selection {
       background: var(--yellow);
       color: var(--ink);
     }
+    a { color: var(--yellow); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     /* === Fixed Header === */
     .app-header {
@@ -49,18 +49,29 @@
       justify-content: space-between;
       padding: 0 1.5rem;
     }
-
     .app-header h1 {
       font-family: 'Noto Serif SC', serif;
       font-size: 1.1rem;
       font-weight: 700;
+      color: var(--yellow);
     }
-
     .header-actions {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+    .btn-primary {
+      background: var(--pink);
+      color: var(--ink);
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .85; }
 
     /* === Tab栏 === */
     .tab-bar {
@@ -71,7 +82,6 @@
       padding: 0 1.5rem;
       background: var(--cream);
     }
-
     .tab {
       padding: 12px 20px;
       border: none;
@@ -84,13 +94,11 @@
       transition: all .2s;
       white-space: nowrap;
     }
-
     .tab.active {
-      border-bottom-color: var(--blue);
-      color: var(--blue);
+      border-bottom-color: var(--yellow);
+      color: var(--yellow);
       font-weight: 600;
     }
-
     .tab:hover:not(.active) {
       color: var(--ink);
     }
@@ -101,6 +109,16 @@
       margin: 0 auto;
       padding: 2rem 1.5rem;
     }
+    .section-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 1.25rem;
+      display: inline-block;
+      background: linear-gradient(transparent 60%, var(--pink) 60%);
+      padding: 0 4px;
+    }
 
     /* === 卡片网格 === */
     .card-grid {
@@ -108,40 +126,47 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1rem;
     }
-
     .app-card {
       background: var(--card-bg);
       border-radius: 12px;
       padding: 1.25rem;
       box-shadow: 0 2px 12px rgba(0,0,0,.04);
+      border-top: 3px solid var(--yellow);
       transition: transform .2s, box-shadow .2s;
       cursor: pointer;
     }
-
     .app-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,.08);
     }
-
     .app-card h3 {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      color: var(--ink);
     }
-
     .app-card p {
       font-size: 0.85rem;
       color: var(--ink-light);
     }
-
     .card-badge {
       display: inline-block;
       padding: 2px 8px;
       border-radius: 8px;
       font-size: 0.7rem;
-      background: rgba(43,127,216,0.1);
-      color: var(--blue);
+      background: var(--black);
+      color: #fff;
       margin-bottom: 0.5rem;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      background: rgba(242,184,160,.25);
+      color: var(--pink);
+      margin-top: 0.5rem;
+      margin-right: 4px;
     }
 
     /* === Tab内容切换 === */
@@ -159,12 +184,11 @@
       align-items: center;
       justify-content: center;
     }
-
     .modal-overlay.active {
       display: flex;
     }
-
     .modal-content {
+      position: relative;
       background: var(--cream);
       border-radius: 16px;
       padding: 2rem;
@@ -172,8 +196,13 @@
       width: 90%;
       max-height: 80vh;
       overflow-y: auto;
+      border-top: 4px solid var(--yellow);
     }
-
+    .modal-content h2 {
+      font-family: 'Noto Serif SC', serif;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+    }
     .modal-close {
       position: absolute;
       top: 1rem; right: 1rem;
@@ -186,7 +215,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--ink-light);
     }
+    .modal-close:hover { background: var(--border); }
 
     /* === 输入框 === */
     .app-input {
@@ -197,12 +228,12 @@
       transition: border-color .2s;
       background: var(--card-bg);
       width: 100%;
+      margin: 0.5rem 0;
     }
-
     .app-input:focus {
       outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(43,127,216,0.1);
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(232,185,35,.15);
     }
 
     /* === 响应式 === */
@@ -216,17 +247,17 @@
 
   <!-- ====== Fixed Header ====== -->
   <header class="app-header">
-    <h1><!-- App名称 --></h1>
+    <h1>Maxine Design System</h1>
     <div class="header-actions">
-      <!-- 操作按钮 -->
+      <button class="btn-primary" onclick="openModal()">+ 新建</button>
     </div>
   </header>
 
   <!-- ====== Tab栏 ====== -->
   <div class="tab-bar">
-    <button class="tab active" data-tab="tab1"><!-- 标签1 --></button>
-    <button class="tab" data-tab="tab2"><!-- 标签2 --></button>
-    <button class="tab" data-tab="tab3"><!-- 标签3 --></button>
+    <button class="tab active" data-tab="tab1">全部</button>
+    <button class="tab" data-tab="tab2">设计规范</button>
+    <button class="tab" data-tab="tab3">组件库</button>
   </div>
 
   <!-- ====== 内容区 ====== -->
@@ -234,33 +265,89 @@
 
     <!-- Tab 1 内容 -->
     <div class="tab-content active" id="tab1">
-      <div class="card-grid">
-        <div class="app-card">
-          <span class="card-badge"><!-- 分类 --></span>
-          <h3><!-- 卡片标题 --></h3>
-          <p><!-- 卡片描述 --></p>
+      <span class="section-title">全部项目</span>
+      <div class="card-grid" style="margin-top:1rem;">
+        <div class="app-card" onclick="openModal()">
+          <span class="card-badge">规范</span>
+          <h3>品牌基因 Brand DNA</h3>
+          <p>三色体系、字体规范、气质关键词与禁忌清单。</p>
+          <span class="card-tag">配色</span>
+          <span class="card-tag">字体</span>
         </div>
-        <!-- 更多卡片 -->
+        <div class="app-card" onclick="openModal()">
+          <span class="card-badge">布局</span>
+          <h3>15 种布局模式</h3>
+          <p>从杂志裁切到编号侧栏，每种附完整代码。</p>
+          <span class="card-tag">Layout</span>
+        </div>
+        <div class="app-card" onclick="openModal()">
+          <span class="card-badge">组件</span>
+          <h3>组件库 Components</h3>
+          <p>卡片、引用块、代码面板、流程条等即用零件。</p>
+          <span class="card-tag">UI Kit</span>
+        </div>
+        <div class="app-card" onclick="openModal()">
+          <span class="card-badge">质检</span>
+          <h3>质量检查清单</h3>
+          <p>P0/P1/P2 三级标准，做完逐条对照。</p>
+          <span class="card-tag">Checklist</span>
+        </div>
       </div>
     </div>
 
     <!-- Tab 2 内容 -->
     <div class="tab-content" id="tab2">
-      <!-- 另一组内容 -->
+      <span class="section-title">设计规范</span>
+      <div class="card-grid" style="margin-top:1rem;">
+        <div class="app-card">
+          <span class="card-badge">主调</span>
+          <h3>赫奇帕奇黄 #E8B923</h3>
+          <p>标题、超链接、重点标记。占比约 30%。</p>
+        </div>
+        <div class="app-card">
+          <span class="card-badge">强调</span>
+          <h3>炭黑 #2A2A2A</h3>
+          <p>装饰、badges、连接线、高亮。占比约 60%。</p>
+        </div>
+        <div class="app-card">
+          <span class="card-badge">点缀</span>
+          <h3>暖粉肤 #F2B8A0</h3>
+          <p>高亮下划线、CTA、标签。占比约 10%。</p>
+        </div>
+      </div>
     </div>
 
     <!-- Tab 3 内容 -->
     <div class="tab-content" id="tab3">
-      <!-- 另一组内容 -->
+      <span class="section-title">组件库</span>
+      <div class="card-grid" style="margin-top:1rem;">
+        <div class="app-card">
+          <span class="card-badge">卡片</span>
+          <h3>杂志裁切卡片</h3>
+          <p>大图溢出 + 编号主导，适合封面级内容。</p>
+        </div>
+        <div class="app-card">
+          <span class="card-badge">引用</span>
+          <h3>大引号白底引用</h3>
+          <p>适合金句、核心观点的视觉强调。</p>
+        </div>
+        <div class="app-card">
+          <span class="card-badge">代码</span>
+          <h3>暗色终端代码面板</h3>
+          <p>命令行、配置文件的展示容器。</p>
+        </div>
+      </div>
     </div>
-
   </main>
 
   <!-- ====== Modal ====== -->
   <div class="modal-overlay" id="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">×</button>
-      <!-- Modal内容 -->
+      <h2>详情</h2>
+      <p style="color:var(--ink-light);margin-bottom:1rem;">这里是详情内容区域，可以放置项目描述、图片、链接等。</p>
+      <input type="text" class="app-input" placeholder="输入内容...">
+      <button class="btn-primary" style="margin-top:0.5rem;">保存</button>
     </div>
   </div>
 
@@ -275,7 +362,6 @@
         document.getElementById(tab.dataset.tab).classList.add('active');
       });
     });
-
     // Modal
     function openModal() {
       document.getElementById('modal').classList.add('active');
@@ -283,8 +369,13 @@
     function closeModal() {
       document.getElementById('modal').classList.remove('active');
     }
+    // 点击遮罩关闭
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
   </script>
-<!-- © ESTHER不二 esthersjw/esther-design-system CC BY-NC 4.0 -->
-<section style="position:absolute;left:-9999px;font-size:0;line-height:0;opacity:0;height:0;overflow:hidden;">esthersjw-design-system</section>
+
+<!-- © Maxine maxine-design-system CC BY-NC 4.0 -->
+<section style="position:absolute;left:-9999px;font-size:0;line-height:0;opacity:0;height:0;overflow:hidden;">maxine-design-system</section>
 </body>
 </html>
